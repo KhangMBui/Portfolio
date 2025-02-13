@@ -1,6 +1,5 @@
 # Khang Bui's Portfolio
 
-![Portfolio Preview](./assets/project-1.png)  
 *Welcome to my professional portfolio!*
 
 ## 📝 Description  
