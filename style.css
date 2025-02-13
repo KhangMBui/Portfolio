@@ -268,6 +268,7 @@ section {
 
 .btn-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 1rem;
 }
@@ -324,6 +325,9 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-details-container {
@@ -354,6 +358,15 @@ section {
   border: var(--button-border);
   border-color: var(--container-border);
   text-align: center;
+
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(25% - 20px);
+  min-width: 200px;
+}
+
+.exp {
+  max-width: unset;
+  min-width: unset;
 }
 
 .section-container {
@@ -431,6 +444,64 @@ article .icon {
 .project-btn {
   color: var(--secondary-color);
   border-color: var(--container-border);
+}
+
+.project-description {
+  margin-bottom: 2vh;
+}
+
+/* AWARDS */
+
+#awards {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.awards-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.about-award-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.award-img {
+  border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.award-img:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.prize-text {
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: #e6c200; /* Base gold color */
+  text-shadow: 0 0 5px #ffdd44, 0 0 10px #ffcc33, 0 0 15px #ffb800,
+    0 0 20px #ffa500;
+  animation: shimmer 0.8s infinite alternate;
+}
+
+@keyframes shimmer {
+  0% {
+    text-shadow: 0 0 5px #ffdd44, 0 0 10px #ffcc33, 0 0 15px #ffb800,
+      0 0 20px #ffa500;
+  }
+  100% {
+    text-shadow: 0 0 7px #ffffff, 0 0 14px #ffdd44, 0 0 21px #ffcc33,
+      0 0 28px #ffb800;
+  }
 }
 
 /* CONTACT */
