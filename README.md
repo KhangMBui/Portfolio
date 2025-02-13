@@ -1,6 +1,4 @@
 # Khang Bui's Portfolio
-
-![image](https://github.com/user-attachments/assets/f9563559-356b-43ce-af4e-5956598bd1e7)
 *Welcome to my professional portfolio!*
 
 ## 📝 Description  
