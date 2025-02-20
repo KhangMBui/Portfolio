@@ -484,23 +484,43 @@ article .icon {
   opacity: 0.8;
 }
 
-.prize-text {
+.prize-text-first {
   font-weight: bold;
   font-size: 1.5rem; /* Adjust size as needed */
   color: #e6c200; /* Base gold color */
   text-shadow: 0 0 5px #ffdd44, 0 0 10px #ffcc33, 0 0 15px #ffb800,
     0 0 20px #ffa500;
-  animation: shimmer 0.8s infinite alternate;
+  animation: shimmer-gold 0.8s infinite alternate;
 }
 
-@keyframes shimmer {
+.prize-text-second {
+  font-weight: bold;
+  font-size: 1.5rem; /* Adjust size as needed */
+  color: #c0c0c0; /* Base silver color */
+  text-shadow: 0 0 5px #d9d9d9, 0 0 10px #bfbfbf, 0 0 15px #a6a6a6,
+    0 0 20px #8c8c8c;
+  animation: shimmer-silver 0.8s infinite alternate;
+}
+
+@keyframes shimmer-gold {
   0% {
     text-shadow: 0 0 5px #ffdd44, 0 0 10px #ffcc33, 0 0 15px #ffb800,
       0 0 20px #ffa500;
   }
   100% {
-    text-shadow: 0 0 7px #ffffff, 0 0 14px #ffdd44, 0 0 21px #ffcc33,
-      0 0 28px #ffb800;
+    text-shadow: 0 0 6px #ffee77, 0 0 12px #ffdd44, 0 0 18px #ffcc33,
+      0 0 24px #ffb800;
+  }
+}
+
+@keyframes shimmer-silver {
+  0% {
+    text-shadow: 0 0 5px #d9d9d9, 0 0 10px #bfbfbf, 0 0 15px #a6a6a6,
+      0 0 20px #8c8c8c;
+  }
+  100% {
+    text-shadow: 0 0 6px #f2f2f2, 0 0 12px #d9d9d9, 0 0 18px #bfbfbf,
+      0 0 24px #a6a6a6;
   }
 }
 
