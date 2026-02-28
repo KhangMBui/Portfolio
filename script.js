@@ -12,8 +12,10 @@ const btn2 = document.getElementById("modeToggle2");
 const themeIcons = document.querySelectorAll(".icon");
 const currentTheme = localStorage.getItem("theme");
 
-if (currentTheme === "dark") {
-  setDarkMode();
+if (currentTheme === "light") {
+  setLightMode();
+} else {
+  setDarkMode(); // dark is the default
 }
 
 btn.addEventListener("click", function () {
@@ -93,10 +95,12 @@ initScrollReveal();
 
 // Scroll progress bar
 const scrollProgress = document.getElementById("scroll-progress");
-window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight =
-    document.documentElement.scrollHeight - window.innerHeight;
-  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-  scrollProgress.style.width = pct + "%";
-});
+if (scrollProgress) {
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + "%";
+  });
+}
