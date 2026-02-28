@@ -90,3 +90,13 @@ function initScrollReveal() {
 }
 
 initScrollReveal();
+
+// Scroll progress bar
+const scrollProgress = document.getElementById("scroll-progress");
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = pct + "%";
+});

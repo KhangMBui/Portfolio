@@ -150,7 +150,9 @@ nav a:hover {
 
 .hamburger-menu {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .hamburger-icon {
@@ -412,7 +414,7 @@ section {
 /* EXPERIENCE SECTION */
 #experience {
   position: relative;
-  /* height: fit-content; */
+  height: fit-content;
 }
 
 .experience-sub-title {
@@ -535,6 +537,7 @@ article .icon {
 /* PROJECTS SECTION */
 
 #projects {
+  margin-top: 10vh;
   position: relative;
   /* height: fit-content; */
 }
@@ -570,6 +573,7 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-top: 10vh;
 }
 
 .awards-details-container {
@@ -659,6 +663,7 @@ article .icon {
 /* SPOTLIGHT SECTION */
 
 #spotlight {
+  margin-top: 10vh;
   position: relative;
 }
 
@@ -744,6 +749,7 @@ article .icon {
 /* FREELANCE SECTION */
 
 #freelance {
+  margin-top: 10vh;
   position: relative;
   height: fit-content;
 }
@@ -1050,8 +1056,209 @@ article .icon {
 footer {
   height: 26vh;
   margin: 0 1rem;
+  position: relative;
 }
 
 footer p {
   text-align: center;
+}
+
+/* ─────────────────────────────────────────────────────
+   EXTRA POLISH
+   ───────────────────────────────────────────────────── */
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #f472b6);
+  z-index: 9999;
+  transition: width 60ms linear;
+  border-radius: 0 2px 2px 0;
+  pointer-events: none;
+}
+
+/* Logo gradient */
+/* .logo {
+  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 55%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+} */
+
+/* Available / Open to Work badge */
+.available-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 2rem;
+  padding: 0.28rem 1rem;
+  margin: 0.6rem auto 1.1rem;
+}
+
+.avail-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  flex-shrink: 0;
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+  }
+  60% {
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0);
+  }
+}
+
+/* Hero secondary ambient orb */
+#profile::after {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(167, 139, 250, 0.13) 0%,
+    transparent 65%
+  );
+  bottom: -60px;
+  right: 6%;
+  pointer-events: none;
+  z-index: 0;
+  animation: float-orb 9s ease-in-out infinite;
+}
+
+@keyframes float-orb {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-22px) scale(1.04);
+  }
+}
+
+/* Section arrow bounce */
+@keyframes bounce-arrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(9px);
+  }
+}
+
+.arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+/* Card top accent strip removed */
+.details-container.color-container {
+  position: relative;
+}
+
+/* Skill tag row-color hover */
+.skills-row {
+  transition: background 220ms ease;
+}
+.skills-row:hover {
+  background: var(--primary-color);
+}
+.skills-row:nth-child(1) .skill-tag:hover {
+  color: #60a5fa;
+  border-color: #60a5fa;
+  background: rgba(96, 165, 250, 0.07);
+}
+.skills-row:nth-child(2) .skill-tag:hover {
+  color: #4ade80;
+  border-color: #4ade80;
+  background: rgba(74, 222, 128, 0.07);
+}
+.skills-row:nth-child(3) .skill-tag:hover {
+  color: #c084fc;
+  border-color: #c084fc;
+  background: rgba(192, 132, 252, 0.07);
+}
+.skills-row:nth-child(4) .skill-tag:hover {
+  color: #fb923c;
+  border-color: #fb923c;
+  background: rgba(251, 146, 60, 0.07);
+}
+.skills-row:nth-child(5) .skill-tag:hover {
+  color: #2dd4bf;
+  border-color: #2dd4bf;
+  background: rgba(45, 212, 191, 0.07);
+}
+
+/* Feature label gradient text */
+.feature-label {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 1;
+}
+
+/* Spotlight h2 gradient */
+.spotlight-text h2 {
+  background: linear-gradient(135deg, var(--secondary-color) 30%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Feature bullet colored arrow */
+.feature-bullets li::before {
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Freelance card left accent on hover */
+.freelance-card:hover {
+  box-shadow:
+    inset 4px 0 0 #a78bfa,
+    0 20px 48px rgba(0, 0, 0, 0.1);
+}
+
+[theme="dark"] .freelance-card:hover {
+  box-shadow:
+    inset 4px 0 0 #a78bfa,
+    0 20px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* Footer gradient separator */
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #60a5fa 30%,
+    #a78bfa 70%,
+    transparent
+  );
 }
