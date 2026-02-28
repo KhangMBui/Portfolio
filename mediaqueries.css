@@ -9,6 +9,11 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .spotlight-feature,
+  .spotlight-feature.reverse {
+    flex-direction: column;
+  }
+
   #desktop-nav {
     display: none;
   }
@@ -44,6 +49,15 @@
 }
 
 @media screen and (max-width: 600px) {
+  .skills-row {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .skills-category-label {
+    min-width: unset;
+  }
+
   #contact,
   footer {
     height: 40vh;
