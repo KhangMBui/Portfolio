@@ -80,7 +80,7 @@ nav {
   font-size: 1.5rem;
 }
 
-nav li:last-child {
+#desktop-nav li:last-child {
   width: max-content;
   display: flex;
   margin: auto;
@@ -173,31 +173,56 @@ nav a:hover {
 
 .menu-links {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.6rem);
   right: 0;
-  background-color: var(--primary-color);
-  width: fit-content;
+  min-width: 210px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--container-border);
+  border-radius: 1.2rem;
+  padding: 0.35rem;
   max-height: 0;
   overflow: hidden;
-  transition: ll 0.3 ease-in-out;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.97);
+  transition: max-height 0.4s ease, opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+  z-index: 200;
+}
+
+[theme="dark"] .menu-links {
+  background: rgba(22, 22, 22, 0.97);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+}
+
+.menu-links.open {
+  max-height: 600px;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .menu-links a {
   display: block;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: var(--secondary-color);
+  padding: 0.72rem 1.1rem;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--secondary-color-2);
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
+  border-radius: 0.75rem;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.menu-links a:hover {
+  background: rgba(96, 165, 250, 0.12);
+  color: #60a5fa;
+  text-decoration: none;
 }
 
 .menu-links li {
   list-style: none;
-}
-
-.menu-links.open {
-  max-height: 300px;
 }
 
 .hamburger-icon.open span:first-child {
@@ -243,8 +268,11 @@ section {
 #profile {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
-  height: 80vh;
+  min-height: 80vh;
+  height: fit-content;
+  padding-bottom: 3rem;
 }
 
 .section__pic-container {
@@ -350,6 +378,8 @@ section {
 
 #about {
   position: relative;
+  height: fit-content;
+  padding-bottom: 4rem;
 }
 
 .about-containers {
