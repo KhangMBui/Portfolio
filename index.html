@@ -9,6 +9,7 @@
     <link rel="icon" href="./assets/profile-pic.png" type="image/x-icon" />
   </head>
   <body>
+    <!-- <div id="scroll-progress"></div> -->
     <nav id="desktop-nav">
       <div class="logo">Khang Bui</div>
       <div>
@@ -36,6 +37,14 @@
     <nav id="hamburger-nav">
       <div class="logo">Khang Bui</div>
       <div class="hamburger-menu">
+        <img
+          id="modeToggle2"
+          class="icon color-icon"
+          src="./assets/theme_light.png"
+          src-light="./assets/theme_light.png"
+          src-dark="./assets/theme_dark.png"
+          alt="Color theme icon"
+        />
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
@@ -49,16 +58,6 @@
           <li><a href="#freelance" onclick="toggleMenu()">Freelance</a></li>
           <li><a href="#awards" onclick="toggleMenu()">Awards</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-          <li>
-            <img
-              id="modeToggle2"
-              class="icon color-icon"
-              src="./assets/theme_light.png"
-              src-light="./assets/theme_light.png"
-              src-dark="./assets/theme_dark.png"
-              alt="Color theme icon"
-            />
-          </li>
         </div>
       </div>
     </nav>
@@ -70,6 +69,10 @@
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Khang Bui</h1>
         <p class="section__text__p2">Software Developer</p>
+        <div class="available-badge">
+          <span class="avail-dot"></span>
+          Open to Opportunities
+        </div>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
@@ -142,8 +145,11 @@
           <div class="text-container">
             <p>
               Hello, I’m Khang — an AI & Full-Stack Engineer who builds scalable, production-grade systems. <br />
+              <br />
               I operate across two domains. In Precision Agriculture at AgWeatherNet, I re-architect and scale environmental data platforms powering real-time interpolation services and statewide weather intelligence. In Applied AI at Pathcrusher, I design and deploy stateless, agentic microservices and multi-agent orchestration pipelines that generate personalized learning paths at scale. <br />
+              <br />
               My focus is backend architecture, distributed systems, and high-performance APIs that turn complex data and AI workflows into reliable, production-ready infrastructure. <br />
+              <br />
               When I’m not engineering systems, you’ll probably find me playing electric guitar.
             </p>
           </div>
@@ -194,7 +200,9 @@
             <span class="skills-category-label">AI Engineering</span>
             <div class="skills-list">
               <span class="skill-tag">CrewAI</span>
+              <span class="skill-tag">LangChain</span>
               <span class="skill-tag">OpenAI SDK</span>
+              <span class="skill-tag">Vector Database</span>
               <span class="skill-tag">PyTorch</span>
               <span class="skill-tag">Hugging Face</span>
               <span class="skill-tag">Multi-agent Systems</span>
