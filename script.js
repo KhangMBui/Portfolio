@@ -51,3 +51,42 @@ function setLightMode() {
     icon.src = icon.getAttribute("src-light");
   });
 }
+
+// Staggered scroll reveal
+function initScrollReveal() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  // Stagger cards within each container group
+  const groups = document.querySelectorAll(
+    ".about-containers, .about-award-containers, .freelance-container, .spotlight-container"
+  );
+
+  groups.forEach((group) => {
+    const cards = group.querySelectorAll(
+      ".details-container.color-container, .spotlight-feature"
+    );
+    cards.forEach((card, i) => {
+      card.classList.add("reveal");
+      card.style.transitionDelay = `${i * 80}ms`;
+      observer.observe(card);
+    });
+  });
+
+  // Skills panel as one unit
+  document.querySelectorAll(".skills-panel").forEach((panel) => {
+    panel.classList.add("reveal");
+    observer.observe(panel);
+  });
+}
+
+initScrollReveal();
