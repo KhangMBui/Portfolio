@@ -414,8 +414,56 @@
       <h1 class="title">Feature Spotlight</h1>
       <div class="spotlight-container">
 
-        <!-- Feature 1: Real-Time Wind Interpolation -->
+        <!-- Feature 1: Platform Overview (carousel) -->
         <div class="spotlight-feature">
+          <div class="spotlight-video-wrapper">
+            <div class="carousel">
+              <div class="carousel-track">
+                <div class="carousel-slide">
+                  <img
+                    src="./assets/agweathernet-landing.png"
+                    class="spotlight-img"
+                    alt="AgWeatherNet landing page — WA state station network with radar overlay"
+                  />
+                </div>
+                <div class="carousel-slide">
+                  <img
+                    src="./assets/agweathernet-aqi.png"
+                    class="spotlight-img"
+                    alt="AgWeatherNet Air Quality Index and dominant pollutant map"
+                  />
+                </div>
+              </div>
+              <button class="carousel-btn carousel-prev" onclick="carouselMove(this, -1)">&#8249;</button>
+              <button class="carousel-btn carousel-next" onclick="carouselMove(this, 1)">&#8250;</button>
+              <div class="carousel-dots">
+                <span class="carousel-dot active" onclick="carouselGoTo(this, 0)"></span>
+                <span class="carousel-dot" onclick="carouselGoTo(this, 1)"></span>
+              </div>
+            </div>
+          </div>
+          <div class="spotlight-text">
+            <p class="feature-label">Environmental Intelligence · Statewide Network</p>
+            <h2>Mission-Critical Environmental Monitoring Platform</h2>
+            <p>
+              Built to serve researchers, farmers, public health officials, and
+              environmentalists across Washington & Oregon State — delivering real-time meteorological
+              data and air quality intelligence through an interactive network spanning 100+
+              monitoring stations, with live radar integration for precipitation and storm
+              tracking. This platform is a public health asset that shapes water resource
+              decisions, informs wildfire smoke advisories, and protects agricultural
+              communities from frost, drought, and toxic air events.
+            </p>
+            <ul class="feature-bullets">
+              <li>100+ active stations tracking temperature, wind, humidity, and precipitation</li>
+              <li>Radar-fused maps enable real-time storm, drought, and frost event response</li>
+              <li>AQI monitoring with dominant pollutant data for environmental compliance and public health alerts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Feature 2: Real-Time Wind Interpolation -->
+        <div class="spotlight-feature reverse">
           <div class="spotlight-video-wrapper">
             <video autoplay muted loop playsinline class="spotlight-video">
               <source src="./assets/agweathernet-wind-demo.mp4" type="video/mp4" />
@@ -437,8 +485,8 @@
           </div>
         </div>
 
-        <!-- Feature 2: Spatio-Temporal GDD & Chill Animations -->
-        <div class="spotlight-feature reverse">
+        <!-- Feature 3: Spatio-Temporal GDD & Chill Animations -->
+        <div class="spotlight-feature">
           <div class="spotlight-video-wrapper">
             <video autoplay muted loop playsinline class="spotlight-video">
               <source src="./assets/agweathernet-spatiotemporal-demo.mp4" type="video/mp4" />
