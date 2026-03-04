@@ -66,11 +66,23 @@ function initCarousels() {
       const current = parseInt(carousel.dataset.current || "0");
       track.style.transform = `translateX(-${current * w}px)`;
     }
-    setWidths();
+    function setWidthsRetry() {
+      const w = carousel.offsetWidth;
+      if (w === 0) {
+        requestAnimationFrame(setWidthsRetry);
+        return;
+      }
+      setWidths();
+    }
+    setWidthsRetry();
     window.addEventListener("resize", setWidths);
   });
 }
-initCarousels();
+if (document.readyState === "complete") {
+  initCarousels();
+} else {
+  window.addEventListener("load", initCarousels);
+}
 
 // Image carousel
 function carouselMove(btn, dir) {
