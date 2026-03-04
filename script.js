@@ -54,6 +54,48 @@ function setLightMode() {
   });
 }
 
+// Initialize carousels — stamp pixel widths so slides are never percentage-ambiguous
+function initCarousels() {
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    const track = carousel.querySelector(".carousel-track");
+    const slides = carousel.querySelectorAll(".carousel-slide");
+    function setWidths() {
+      const w = carousel.offsetWidth;
+      slides.forEach((slide) => (slide.style.width = w + "px"));
+      // Re-apply current translate in case width changed during resize
+      const current = parseInt(carousel.dataset.current || "0");
+      track.style.transform = `translateX(-${current * w}px)`;
+    }
+    setWidths();
+    window.addEventListener("resize", setWidths);
+  });
+}
+initCarousels();
+
+// Image carousel
+function carouselMove(btn, dir) {
+  const carousel = btn.closest(".carousel");
+  const track = carousel.querySelector(".carousel-track");
+  const slides = carousel.querySelectorAll(".carousel-slide");
+  const dots = carousel.querySelectorAll(".carousel-dot");
+  let current = parseInt(carousel.dataset.current || "0");
+  current = (current + dir + slides.length) % slides.length;
+  carousel.dataset.current = current;
+  const w = carousel.offsetWidth;
+  track.style.transform = `translateX(-${current * w}px)`;
+  dots.forEach((d, i) => d.classList.toggle("active", i === current));
+}
+
+function carouselGoTo(dot, index) {
+  const carousel = dot.closest(".carousel");
+  const track = carousel.querySelector(".carousel-track");
+  const dots = carousel.querySelectorAll(".carousel-dot");
+  carousel.dataset.current = index;
+  const w = carousel.offsetWidth;
+  track.style.transform = `translateX(-${index * w}px)`;
+  dots.forEach((d, i) => d.classList.toggle("active", i === index));
+}
+
 // Staggered scroll reveal
 function initScrollReveal() {
   const observer = new IntersectionObserver(
