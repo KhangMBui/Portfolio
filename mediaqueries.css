@@ -14,6 +14,13 @@
     flex-direction: column;
   }
 
+  .spotlight-video-wrapper,
+  .carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
   #desktop-nav {
     display: none;
   }
